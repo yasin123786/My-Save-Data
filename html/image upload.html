@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    html,body{
+      display: grid;
+      height: 100%;
+      place-items: center;
+      text-align: center;
+    }
+    .container{
+      height: 350px;
+      width: 430px;
+    }
+    .container .wrapper{
+      position: relative;
+      height: 300px;
+      width: 100%;
+      border-radius: 10px;
+      background: #fff;
+      border: 2px dashed #c2cdda;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .wrapper .image{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .wrapper .image img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover ;
+    }
+    .wrapper .icon{
+      font-size: 100px;
+      color: #9658fe;
+    }
+    .wrapper .text{
+      font-size: 20px;
+      font-weight: 500;
+      color: #9658fe;
+    }
+    .wrapper #cencel-btn{
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #9658fe;
+      display: none;
+    }
+    .wrapper .file-name{
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      color: #fff;
+      padding: 8px 0;
+      font-size: 18px;
+      background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+    }
+    .container #custom-btn{
+      margin-top: 30px;
+      width: 100%;
+      height: 50px;
+      display: block;
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+    }
+    </style>
+  </head>
+<body>
+     <div class="container">
+      <div class="wrapper">
+        <div class="image">
+          <img src="" alt="">
+        </div>
+        <div class="content">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M144 480C64.47 480 0 415.5 0 336C0 273.2 40.17 219.8 96.2 200.1C96.07 197.4 96 194.7 96 192C96 103.6 167.6 32 256 32C315.3 32 367 64.25 394.7 112.2C409.9 101.1 428.3 96 448 96C501 96 544 138.1 544 192C544 204.2 541.7 215.8 537.6 226.6C596 238.4 640 290.1 640 352C640 422.7 582.7 480 512 480H144zM223 263C213.7 272.4 213.7 287.6 223 296.1C232.4 306.3 247.6 306.3 256.1 296.1L296 257.9V392C296 405.3 306.7 416 320 416C333.3 416 344 405.3 344 392V257.9L383 296.1C392.4 306.3 407.6 306.3 416.1 296.1C426.3 287.6 426.3 272.4 416.1 263L336.1 183C327.6 173.7 312.4 173.7 303 183L223 263z"/></svg></div>
+            <div class="text">No file chosen, yet!</div>
+        </div>
+        <div id="cancel-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></div>
+        <div class="file-name">File name here</div>
+      </div>
+      <input hidden id="default-btn" type="file">
+      <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+     </div>
+
+
+     <script>
+      const fileName = document.querySelector(".file-name");
+      const defaultBtn = document.querySelector("#default-btn");
+      const customBtn = document.querySelector("#custom-btn");
+      const img = document.querySelector("img");
+      let regExp = /[0-9a-zA-Z]\^\&\'\@\{\}\[\]\,\$\-\#\(\)\.\%\+\~\_\]+$/;
+      function defaultBtnActive(){
+        defaultBtn.click();
+     }
+     defaultBtn.addEventListener("change", function(){
+      const file = this.files[0];
+      if(file){
+        const reader = new FileReader();
+        reader.onload = function(){
+          const result = reader.result;
+          img.src = result;
+        }
+        reader.readAsDataURL(file);
+      }
+      if(this.value){
+      let valueStore = this.value.match(regExp);
+      fileName.textContent = valueStore;
+    }
+     });
+     </script>
+</body>
+</html>

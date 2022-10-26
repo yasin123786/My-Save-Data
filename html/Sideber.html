@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body{
+    font-family:"roboto",sans-serif;
+   } 
+   *{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+   }
+ .sideber{
+  position:fixed;
+}
+ .sideber header{
+  font-size:22px;
+  color:white;
+  text-align:center;
+  line-height:70px;
+  background:#063146;
+  user-select:none;
+ }
+ .sideber ul a{
+  display:block;
+  height:100%;
+  width:100%;
+  line-height:400%;
+  font-size:20px;
+  color: white;
+  padding-left:40px;
+  box-sizing:border-box;
+  border-top:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid block;
+  transition:.4s;
+ }
+ ul li:hover a{
+  padding-left:50px;
+ }
+ .sideber ul a i{
+  margin-right:16px;
+ }
+ #check{
+  display:none;
+ }
+ label #bin,label #cencel{
+  position:absolute;
+  cursor: pointer;
+ }
+ label #bin{
+  left: 40px;
+  top:25px;
+  font-size:35px;
+  color:white;
+ }
+  </style>
+</head>
+<body>
+      <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="bin"></i>
+    <i class="fas fa-times" id="cencel"></i>
+  </label>
+       <div class="sideber">
+        <header>My app</header>
+         <ul>
+           <li><a href=""><i class="fas fa qrcde"></i>Homepage</a></li>
+           <li><a href=""><i class="fas fa qrcde"></i>About us</a></li>
+           <li><a href=""><i class="fas fa qrcde"></i>Our Products</a></li>
+           <li><a href=""><i class="fas fa qrcde"></i>App</a></li>
+           <li><a href=""><i class="fas fa qrcde"></i>Sideber</a></li>
+           <li><a href=""><i class="fas fa qrcde"></i>Time</a></li>
+         </ul>
+       </div>
+</body>
+</html>

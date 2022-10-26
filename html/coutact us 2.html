@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function validate()
+	{
+	var Username=document.getElementById("Username").value;
+	var password=document.getElementById("password").value;
+	if(Username=="admin"&& password=="user")
+		{
+          alert("login succesfully");
+          return false;
+	    }
+	else
+	{
+		alert("login falied");
+	}
+
+
+	
+	}
+</script>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		.qqq{
+			width: 300px;
+			padding: 30px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			background: rgba(0,0,0,0.4);
+			text-align: center;
+		}
+		.qqq h1{
+			color: white;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		.qqq input[type="text"],.qqq input[type="password"]{
+			border:0;
+			background: none;
+			display: block;
+			margin: 20px auto;
+			text-align: center;
+			border: 3px solid #0367fd;
+			padding: 14px 10px;
+			width: 220px;
+			outline: none;
+			color: white;
+			border-radius: 24px;
+			transition: 0.25px;		
+		}
+
+		input[type="text"]:focus,.qqq input[type="password"]:focus{
+			width: 270px;
+			border-color: #ffc400ec;
+		}
+		.qqq input[type="submit"]{
+			border:0;
+			background: none;
+			display: block;
+			margin: 20px auto;
+			text-align: center;
+			border: 3px solid #ffc400ec;
+			padding: 14px 35px;
+			outline: none;
+			color: white;
+			border-radius: 24px;
+			transition: 0.25px;
+			cursor: pointer;
+		}
+		.qqq input[type="submit"]:hover{
+			background: #ffc400ec;
+		}
+	</style>
+</head>
+<body>
+      <form class="qqq" action="login.html" method="POST">
+      	<h1>
+      		login
+      	</h1>
+      	<input type="text" name="" placeholder="Enter Username" id="Username">
+      	<input type="password" name="" placeholder="Enter password" id="password">
+      	<input type="submit" name="" value="login" onclick="validate()">
+      </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+body{
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: rgb(105, 99, 99);
+}
+#clockContainer{
+    width: 40vw;
+    height: 40vw;
+    /* width: 400px;
+    height: 400px; */
+    background-image: url("../img/clock.png");
+    background-size: 100%;
+    margin-left: auto;
+    margin-right: 10%;
+    margin-top: 2%;
+    /* border: 2px solid red; */
+    position: relative;
+}
+
+#hourHand{
+    width: 2%;
+    height: 28%;
+    background-color: black;
+    border-radius: 50px;
+    position: absolute;
+    top: 22.5%;
+    left: 49%;
+    transform-origin: bottom;
+    /* display: none; */
+
+}
+#minuteHand{
+    width: 1.5%;
+    height: 32%;
+    background-color: black;
+    border-radius: 50px;
+    position: absolute;
+    top: 18.5%;
+    left: 49.25%;
+    transform-origin: bottom;
+    /* display: none; */
+
+}
+#secondHand{
+    width: 0.5%;
+    height: 40%;
+    background-color: black;
+    border-radius: 50px;
+    position: absolute;
+    top: 10%;
+    left: 49.73%;
+    transform-origin: bottom;
+}

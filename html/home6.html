@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript">
+    const bar = document.getElementById('bar');
+    const nav = document.getElementById('navbar');
+    if (bar) {
+      bar.addEventListener('click', () => {
+        nav.classList.add('active');
+      })
+    }
+  </script>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Spartan',sans-serif;
+    }
+    .section-p1{
+      padding: 40px 60px;
+    }
+    .section-m1 {
+    margin: 60px 0;
+    }
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 80px;
+      background: #E3E6F3;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+      z-index: 999;
+      position: sticky;
+      top: 0;
+      left: 0;
+    } 
+    #navbar{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #navbar li {
+      list-style: none;
+      padding: 0 17px;
+      position: relative;
+    }
+    #navbar li a{
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      transition: 0.3s ease;
+    }
+    #navbar li a:hover,
+    #navbar li a.active{
+      color: #088178;
+    }
+    #navbar li a.active::after,
+    #navbar li a:hover::after {
+      content: "";
+      width: 40%;
+      height: 2px;
+      background: #088178;
+      position: absolute;
+      bottom: -4px;
+      left: 20px;
+    }
+    #hero{
+      background-image: url(Image.jpg);
+      height: 90vh;
+      width: 100%;
+      background-size: cover;
+      background-position: top 25% right 0;
+      padding: 0 80px;    
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #hero h4{
+      padding-bottom: 15px;
+    }
+    #hero h1{
+      color: white;
+    }
+
+    #hero button {
+      background-image: url(Image1.jpg);
+      background-color: white;
+      color: #088178;
+      border: 1px solid brown;
+      padding:1rem 1rem;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    #feature .fe-ox {
+      width: 180px;
+      text-align: center;
+      padding: 25px 15px;
+      box-shadow: 20px 20px 34px rgba(0,0,0,0.03);
+      border: 1px solid #cce7d0;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+    #feature .fe-ox:hover{
+      box-shadow: 10px 10px 54px rgba(70,62,221,0.1);
+    }
+    #feature .fe-ox h6{
+      display: inline-block;
+      padding: 9px 8px 6px 8px;
+      line-height: 1;
+      border-radius: 4px;
+      color: #088178;
+      background-color: #fddde4;
+    }
+    #feature .fe-ox img{
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    #feature {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    #feature .fe-ox:nth-child(2) h6{
+     background-color: #cdebbc; 
+    }
+    #feature .fe-ox:nth-child(3) h6{
+     background-color: #d1e8f2; 
+    }
+    #feature .fe-ox:nth-child(4) h6{
+     background-color: #cdd4f8; 
+    }
+    #feature .fe-ox:nth-child(5) h6{
+     background-color: #f6dbf6; 
+    }
+    #feature .fe-ox:nth-child(6) h6{
+     background-color: #fff2e5; 
+    }
+    #product1 {
+      text-align: center;
+    }
+    #product1 .pro-co{
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      flex-wrap: wrap;
+    }
+    #product1 .pro {
+      width: 23%;
+      min-width: 250px;
+      padding: 10px 12px;
+      border: 1px solid #cce7d0;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 20px 20px 30px rgba(0,0,0, 0.02);
+      margin: 15px 0;
+      transition: 0.2s ease;
+      position: relative;
+    }
+    #product1 .pro:hover{
+      box-shadow: 20px 20px 30px rgba(0,0,0,0.06);
+    }
+    #product1 .pro img{
+      width: 100%;
+      border-radius: 20px;
+    }
+    #product1 .pro .des{
+      text-align: start;
+      padding: 10px 0;
+    }
+    #product1 .pro .des span {
+      color: #606063;
+      font-size: 12px;
+    }
+    #product1 .pro .des h5 {
+      padding-top: 7px;
+      color: #1a1a1a;
+      font-size: 14px;
+    }
+    #product1 .pro .des i {
+      font-size: 12px;
+      color: rgb(243, 181, 25);
+    }
+    #product1 .pro .cart{
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50px;
+      background-color: #e8f6ea;
+      font-weight: 500;
+      color: #088178;
+      border: 1px solid #cce7d0;
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+    }
+    #apple{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: url(Image.jpg);
+      width: 100%;
+      height: 40vh;
+      background-size: cover;
+      background-position: center;
+    }
+    #apple h4 {
+      color: white;
+      font-size: 30px;
+    }
+
+    #apple h2 {
+      color: #fff;
+      font-size: 50px;
+      padding: 10px 0;
+    }
+    #apple h2 span{
+      color: #ef3636;
+      font-size: 50px;
+    }
+    button.normal {
+      font-size: 14px;
+      font-weight: 600;
+      padding: 15px 30px;
+      color: #000;
+      background-color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: 0.2s;
+    }
+    #apple button:hover {
+      background: #088178;
+      color: #fff;
+    }
+    #sm-apple {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    #sm-apple .apple-ox{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background-image: url(Image.jpg);
+      width: 540px;
+      height: 50vh;
+      background-size: cover;
+      background-position: center;
+      padding: 30px;
+    }
+    #sm-apple h4 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 300;
+    }
+    #sm-apple h2 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 300;
+    }
+    #sm-apple span {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      padding-bottom: 15px;
+    }
+    button.white {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 11px 18px;
+      color: #fff;
+      background-color: transparent;
+      cursor: pointer;
+      border: 1px solid #fff;
+      outline: none;
+      transition: 0.2s;
+    }
+    #sm-apple .apple-ox:hover button{
+      background: #088178;
+      border: 1px solid #088178;
+    }
+    #apple3 .apple-ox{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background-image: url(Image.jpg);
+      min-width: 30%;
+      height: 30vh;
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    #apple3 h2{
+      color: #fff;
+      font-weight: 900;
+      font-size: 22px;
+    }
+    #apple3 h3{
+      color: #ec544e;
+      font-weight: 900;
+      font-size: 15px;
+    }
+    #apple3 {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 80px;
+    }
+    #letter{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color:blue;
+      background-repeat: no-repeat;
+      background-position: 20% 30%;
+      background-color: #041e42;
+    }
+    #letter h4{
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+    #letter p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #818ea0;
+    }
+    #letter p span {
+      color: #ffbd27;
+    }
+    #letter input {
+      height: 4rem;
+      padding: 0 1.25rem;
+      font-size: 14px;
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      outline: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    #letter button {
+      background-color: #088278;
+      color: white;
+      white-space: nowrap;
+       border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    #letter .form{
+      display: flex;
+      width: 40%;
+    }
+    footer{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    footer .col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    footer .logo{
+      margin-bottom: 30px;
+    }
+    footer h4{
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+    footer p{
+      font-size: 13px;
+      padding: 0 0 8px 0;
+    }
+    footer a{
+      font-size: 13px;
+      text-decoration: none;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 799px) {
+      #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        right: -200px;
+        height: 40vh;
+        width: 300px;
+        background-color: #E3E6F3;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+      }
+      #navbar li {
+        margin-bottom: 25px;
+      }
+      #moile {
+        display: flex;
+        align-items: center;
+      }
+      #moile i{
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+      }
+      #hero{
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 30%;
+      }
+      #feature{
+        justify-content: center;
+      }
+      #feature .fe-ox{
+        margin: 15px 15px;
+      }
+      #product1 .pro-co{
+        justify-content: center;
+      }
+      #product1 .pro {
+        margin: 15px;
+      }
+      #apple h2{
+        color: #fff;
+      font-size: 20px;
+      padding: 10px 0;
+      }
+      #apple h2 span{
+      color: #ef3636;
+      font-size: 20px;
+    }
+    #sm-apple .apple-ox{
+      min-width: 100%;
+      height: 30vh;
+      margin-top: 30px;
+    }
+    #apple3 {
+      padding: 0 40px;
+    }
+    #apple3 .apple-ox{
+      width: 20%;
+    }
+    #letter .form{
+      width: 70%;
+      margin-top: 10px;
+    }
+    #letter p {
+      margin-top: 5px;
+    }
+    } 
+    #moile {
+      display: none;
+      align-items: center;
+    }
+  </style>
+</head>
+<ody>
+      <section id="header">
+        <a href=""><img style="width:40px;" src="www.jpeg" class="logo" alt=""></a>
+        <div>
+          <ul id="navbar">
+            <li><a class="active" href="">HOME</a></li>
+            <li><a href="">SHOP</a></li>
+            <li><a href="">BLOG</a></li>
+            <li><a href="">CONTACT</a></li>
+            <li><a href="">ABOUT US</a></li>
+          </ul>
+        </div>
+        <div id="moile">
+          <i id="ar" class="fas fa-outdent"></i>
+        </div>
+      </section>
+
+      <section id="hero">
+        <h4 style="color: white;">Trade-in-offer</h4>
+        <h2 style="color: white;font-size: 50px;">Super value deals</h2>
+        <h1 style="color: white;font-size: 50px;">On all products</h1>
+        <br>
+        <p style="color: white">Save more with coupons & up to 70% off! </p>
+        <br>
+        <button>Shop now</button>
+      </section>
+
+      <section id="feature" class="section-p1">
+        <div class="fe-ox">
+          <img style="width:50%;" src="www.jpeg" alt="">
+          <h6>Free Shipping</h6>
+        </div>
+        <div class="fe-ox">
+          <img style="width:50%;" src="www.jpeg" alt="">
+          <h6>Online Order</h6>
+        </div>
+        <div class="fe-ox">
+          <img style="width:50%;" src="www.jpeg" alt="">
+          <h6>Save Money</h6>
+        </div>
+        <div class="fe-ox">
+          <img style="width:55.6%;" src="www.jpeg" alt="">
+          <h6>promotins</h6>
+        </div>
+        <div class="fe-ox">
+          <img style="width:55%;" src="www.jpeg" alt="">
+          <h6>Happy Sell</h6>
+        </div>
+        <div class="fe-ox">
+          <img style="width:50%;" src="www.jpeg" alt="">
+          <h6>F24/7 Support</h6>
+        </div>
+      </section>
+
+      <section id="product1" class="section-p1">
+        <h2 style="font-size:40px;">Featured Products</h2>
+        <p>Summer Collection New Morden Design</p>
+        <div class="pro-co">
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="apple" class="section-m1">
+        <h4>Repair Service </h4>
+        <h2>Up to <span>70% Off</span> - All t-shirts & Accessories</h2>
+       <button class="normal">Explore More</button> 
+      </section>
+
+      <section id="product1" class="section-p1">
+        <h2 style="font-size:50px;">New Arrivals</h2>
+        <p>Summer Collection New Morden Design</p>
+        <div class="pro-co">
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+          <div class="pro">
+             <img src="www.jpeg" alt="">
+             <div class="des">
+              <span>adidas</span>
+              <h5>Cartoon Astronaut T-Shirts</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>$78</h4>
+             </div>
+             <a href=""><i class="fal fa-shopping-cart cart"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="sm-apple" class="section-p1">
+        <div class="apple-ox">
+          <h4 style="font-size: 20px;">Crazy Deals</h4>
+          <h2 style="font-size:50px;">buy 1 get 1 free</h2>
+          <span style="font-size:20px;">The best classic dress is on sale at cara</span>
+          <button class="white">Learn More</button>
+        </div>
+        <div class="apple-ox">
+          <h4 style="font-size: 20px;">Crazy Deals</h4>
+          <h2 style="font-size:50px;">buy 1 get 1 free</h2>
+          <span style="font-size:20px;">The best classic dress is on sale at cara</span>
+          <button class="white">Learn More</button>
+        </div>
+      </section>
+
+      <section id="apple3">
+        <div class="apple-ox">
+          <h2>SEASONAL SALE</h2>
+          <H3>Winter Collection -50% OFF</H3>
+        </div>
+        <div class="apple-ox">
+          <h2>SEASONAL SALE</h2>
+          <H3>Winter Collection -50% OFF</H3>
+        </div>
+        <div class="apple-ox">
+          <h2>SEASONAL SALE</h2>
+          <H3>Winter Collection -50% OFF</H3>
+        </div>
+      </section>
+
+      <section id="letter" class="section-p1 section-m1">
+        <div class="text">
+          <h4 style="font-size:20px;">Sign Up For Newsletters</h4>
+          <p>Get E-Mail update about our latest shop and <span>Sepecial Offers.</span></p>
+        </div>
+        <div class="form">
+          <input type="text" placeholder="Your email address">
+          <button class="normal">Sign Up</button>
+        </div>
+      </section>
+
+      <footer class="section-p1">
+        <div class="col">
+          <h4>Contact</h4>
+          <br>
+          <p><strong>Address: </strong>8-B Waseem Block Hassan Town Multan Road Lahore</p>
+          <br>
+          <p><strong>Phone: </strong>+92 3314943086</p>
+          <br>
+          <p><strong>Hours: </strong>10:00 - 18:00, Mon - Sat</p>
+          <br>
+          <div class="follow">
+            <h4></h4>
+            <div class="ico">
+              <i class="asdadasd"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h4>About</h4>
+          <a href="">About Us</a>
+          <a href="">Delivery Information</a>
+          <a href="">Privacy Policy</a>
+          <a href="">Terms & Conditions</a>
+          <a href="">Contact Us</a>
+        </div>
+        <div class="col">
+          <h4>My Account</h4>
+          <a href="">About Us</a>
+          <a href="">Delivery Information</a>
+          <a href="">Privacy Policy</a>
+          <a href="">Terms & Conditions</a>
+          <a href="">Contact Us</a>
+        </div>
+        </div>
+      </footer>      
+</body>
+</html>

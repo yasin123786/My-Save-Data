@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		let nav = document.querySelector('.nav');
+
+		document.querySelector('#menu-bar').onclick = () =>{
+	         nav.classList.toggle('active'); 
+		}
+	</script>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+		:root{
+			--main-color:#d3ad7f;
+			--black:#13131a;
+			--bg:#010103;
+			--border:.1rem solid rgba(255, 255, 255, .3);
+		}
+		*{
+			font-family: 'Roboto', sans-serif;
+			margin: 0; 
+			padding: 0;
+			box-sizing: border-box;
+			outline: none;
+			text-decoration: none;
+			text-transform: capitalize;
+			transition: .2s linear;
+		}
+		html{
+			font-size: 62.5%;
+			overflow-x: hidden;
+			scroll-padding-top: 9rem;
+			scroll-behavior: smooth;
+		}
+		html::-webkit-scrollbar{
+			width: .8rem;
+		}
+		html::-webkit-scrollbar-track{
+			background: transparent;
+		}
+		html::-webkit-scrollbar-thumb{
+			background: #fff;
+			border-radius: 5rem;
+		}
+		.header{
+			background: var(--bg);
+			display: flex;
+			align-items: center;justify-content: space-between;
+			padding: 1.5rem 7%;
+			border-bottom: var(--border);
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+		}
+		.header .ico div{
+			color: #fff;
+			cursor: pointer;
+			font-size: 2.5rem;
+			margin-left: 2rem;
+		}
+		.header .ico div:hover{
+			color: var(--main-color);
+		}
+		#menu-bar{
+            display: none;
+		}
+		.header .logo img{
+			height: 6rem;
+		}
+		.header .nav a{
+			margin: 0 1rem;
+			font-size: 1.6rem;
+			color: #fff;
+		}
+		.header .nav a:hover{
+            color:var(--main-color);
+            border-bottom: .1rem solid var(--main-color);
+            padding: .5rem;
+		}
+		.header .search-from{
+			position: absolute;
+			top: 115%;
+			right: 6%;
+			background: #fff;
+			width: 50rem;
+			height: 5rem;
+			align-items: center;
+			transform: scaleY();
+			transform-origin: ;
+		} 
+		.header .search-from input{
+			height: 100%;
+			width: 100%;
+			font-size: 1.6rem;
+			color: var(--black);
+			padding: 1rem;
+			text-transform: none;
+		}
+		.header .search-from label{
+			cursor: pointer;
+			font-size: 2.2rem;
+			margin-right: 1.5rem;
+			color: var(--black);
+		}
+		.header .search-form label:hover{
+			color: var(--main-color);
+		}
+		.header .cart-item{
+			position: absolute;
+			top: 100%;
+            right: -100%;
+            height: calc(100vh - 9.5rem);
+            width: 35rem;
+            background: #fff;
+            padding: 0 1.5rem; 
+		}
+		.header .cart-item .card-items{
+			position: relative;
+			margin: 2rem 0;
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+		}
+		.header .cart-item .card-items .fa-times{
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			font-size: 2rem;
+			cursor: pointer;
+			color: var(--black);
+		}
+		.header .cart-item .card-items .fa-times:hover{
+			color: var(--main-color);
+		}
+		.header .cart-item .card-items img{
+			height: 7rem;
+		}
+		.header .cart-item .card-items .cotect h3{
+			font-size: 2rem;
+			color: var(--black);
+			padding-bottom: .5rem;
+		}
+		.header .cart-item .card-items .cotect .price{
+            font-size: 2rem;
+            color: var(--main-color);
+		}
+		.bt{
+			margin-top: 1rem;
+			display: inline-block;
+			padding: 2rem 3rem;
+			font-size: 1.7rem;
+			color: #fff;
+			background: var(--main-color);
+			cursor: pointer;
+		}
+		.bt:hover{
+            letter-spacing: .2rem;
+		}
+		.header .cart-item .bt{
+			width: 100%;
+			text-align: center;
+		}
+		@media (max-width: 991px){
+			.header .nav{
+				position: absolute;
+				top: 100%;
+				right: 0%;
+				background-color: #fff;
+				width: 30rem;
+				height: calc(10vh - 9.5rem);
+			}
+			.header .nav .active{
+                right: 0;
+			}
+			.header .nav a{
+				display: block;
+				margin: 1.5rem;
+				padding: .5rem;
+				font-size: 2rem;
+			}
+		}
+	</style>
+</head>
+<body style="background-color: black">
+	<header class="header">
+       <a class="logo" href="">
+       	<img src="1.jpg">
+       </a>
+       <nav class="nav">
+       	<a href="">Home</a>
+       	<a href="">Home</a>
+       	<a href="">Home</a>
+       	<a href="">Home</a>
+       	<a href="">Home</a>
+       </nav>
+      <div class="ico">
+      	<div class="fas fa-search" id="search-btn"></div>
+      	<div class="fas fa-shopping-cart" id="cart-btn"></div>
+      	<div class="fas fa-bar" id="menu-bar"></div>
+      </div>
+       <div class="search-from">
+       	<input type="search" id="search" placeholder="search here....">
+       	<label for="search" class="fas fa-search"></label>
+       </div>
+
+       <div class="cart-item">
+       	<div class="card-items">
+       		<span class="fas fa-times"></span>
+       		<img src="1.jpg" alt="">
+       		<div class="cotect">
+       			<h3>cart item 01</h3>
+       			<div class="price">$15.999</div>
+       		</div>
+       	</div>
+       	<div class="card-items">
+       		<span class="fas fa-times"></span>
+       		<img src="1.jpg">
+       		<div class="cotect">
+       			<h3>cart item 01</h3>
+       			<div class="price">$15.999</div>
+       		</div>
+       	</div>
+       	<div class="card-items">
+       		<span class="fas fa-times"></span>
+       		<img src="1.jpg">
+       		<div class="cotect">
+       			<h3>cart item 01</h3>
+       			<div class="price">$15.999</div>
+       		</div>
+       	</div>
+       	<div class="card-items">
+       		<span class="fas fa-times"></span>
+       		<img src="1.jpg">
+       		<div class="cotect">
+       			<h3>cart item 01</h3>
+       			<div class="price">$15.999</div>
+       		</div>
+       	</div>
+       	<a href="" class="btn">checkout now</a>
+       </div>
+       </header>
+       <section>
+       	<div class="cotent">
+       		<h3>fresh coffee in the morning</h3>
+       		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat laore, sint cupiditate distinctio temora reicientdis.</p>
+       		<a href="" class="btn">get your bow</a>
+       	</div>
+       </section>
+</body>
+</html>

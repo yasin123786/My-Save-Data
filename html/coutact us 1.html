@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: 'Montserrat';
+		}
+		section{
+			height: 100vh;
+			width: 100%;
+			background-color: aliceblue;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+		.qqq{
+			width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0px 0px 20px #00000010;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+		}
+		.fds{
+			width: 100%;
+			margin-top: 20px;
+			font-size: 20px;
+		}
+		.fds input,
+		.fds textarea{
+			width: 100%;
+			padding: 4px;
+			font-size: 18px;
+			border: 1px solid rgba(128,128,128,0.198);
+			margin-top: 4px;
+		}
+
+		textarea{
+			resize: vertical;
+			height:20vh;
+		}
+        button[type="submit"]{
+        	width: 100%;
+        	border: none;
+        	outline: none;
+        	padding: 20px;
+        	font-size: 24px;
+        	border-radius: 8px;
+        	font-family: 'Montserrat';
+        	color: rgb(27,166,247) ;
+        	text-align: center;
+        	cursor: pointer;
+        	height: 11vh;
+        	margin-top: 10px;
+        	transition: .3s ease background-color;
+        }
+        button[type="submit"]:hover{
+        	background-color: rgb(214,226,236);
+        }
+        #status{
+            width: 98%;
+            max-width: 500px;
+            text-align: center;
+            padding: 10px;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+        #status.success{
+        	background-color: rgb(211,250,153);
+        	animation: status 4s ease forwards;
+        }
+        #status.error{
+        	background-color: rgb(250,129,92);
+        	color: white;
+        	animation: status 4s ease forwards;
+        }
+        @keyframes status{
+        	0%{
+        		opacity: 1;
+        		pointer-events: all; 
+        	}
+        	90%{
+        		opacity: 1;
+        		pointer-events: all;
+        	}
+        	100%{
+        		opacity: 0;
+        		pointer-events: none;
+        	}
+        }
+	</style>
+</head>
+<body>
+	<section>
+		<div class="qqq">
+			<form action="https://formspree.io/mbjzbwaj" method="POST">
+				<div class="fds">
+					<label form="firstname">firstname</label>
+					<input type="text" id="firstname" name="firstname">
+				</div>
+
+                <div class="fds">
+					<label form="lastname">lastname</label>
+					<input type="text" id="lastname" name="lastname">
+				</div>
+
+                <div class="fds">
+					<label form="e-mail">e-mail</label>
+					<input type="text" id="e-mail" name="e-mail">
+				</div>
+
+				<div class="fds">
+					<label form="message">massage</label>
+					<textarea name="massage" id="massage" cols="30" rows="10"></textarea>
+				</div>
+				<button type="submit">submit</button>
+			</form>
+		</div>
+		<div id="status" class="error">success</div>
+	</section>
+</body>
+</html>

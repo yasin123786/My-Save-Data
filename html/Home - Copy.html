@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    #feature-product{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 50px 0px;
+    }
+    #feature-product h2,
+    #news h3{
+      color: #2e2e2e;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    #feature-product h2,
+    #news h3::after{
+      border-bottom: 1px solid #000000;
+      width: 80%;
+      height: 1px;
+      background-color: #2e2e2e;
+      position: absolute;
+      content: '';
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -5px;
+    }
+    .feature-product-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 60px auto;
+      width: 1200px;
+      padding: 20px 0px;
+      background-color: #d6d6d60e;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .feature-product-box{
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+    }
+    .feature-product-img{
+      width: 250px;
+      height: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      border: 1px solid rgba(0,0,0,0.4);
+    }
+    .feature-product-img img{
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      object-position: center;
+    }
+    .feature-product-text-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .product-feature-text{
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    .product-feature-text strong{
+      color: #272727;
+      font-weight: 600;
+      line-height: 20px;
+    }
+    .product-feature-text span{
+      color: #747474;
+    }
+    .cart-like{
+      display: flex;
+    }
+    .cart-like a{
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      bottom: 1px solid #747474;
+      margin: 0px 3px;
+      font-size: 0.9rem;
+    }
+    .cart-like a i{
+      color: #2c2c2c;
+    }
+    .cart-like a:hover{
+      background-color: #c72728;
+    }
+    .cart-like a:hover i{
+      color: #ffffff;
+      transition: all ease 0.3s;
+    }
+    #banner{
+      border: 1px solid rgba(235,235,235);
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 0.7fr 1.4fr;
+      margin: auto;
+      grid-gap: 40px;
+      height: 300px;
+      background-color: #f5f5f5;
+      margin-bottom: 50px;
+    }
+    .banner-img{
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      flex-direction:column;
+      height: 300px;
+    }
+    .banner-img img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    .banner-text{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 300px;
+      padding: 20px 40px;
+    }
+    .banner-text strong{
+      font-size: 2rem;
+      font-weight:500;
+      color: #292929;
+    }
+    .banner-text span{
+      color: #222222;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+    .banner-text p{
+      color: #636363;
+    }
+    .banner-text a{
+      color: #ffffff;
+      background-color: #e74444;
+      width: 140px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      border: 1px solid rgba(0,0,0,0.14);
+    }
+    .banner-text a:hover{
+      background-color: #cf2728;
+      transition: all ease 0.3s;
+    }
+    #news{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 60px 0px;
+    }
+    .news-box-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .news-box{
+      width: 350px;
+      height: 350px;
+      background-color: #f5f5f5;
+      position: relative;
+      overflow: hidden;
+      margin: 20px;
+    }
+    .news-img{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .news-img img{
+      width: 80%;
+      height: 80%;
+    }
+    .news-text{
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border: 4px solid #d6d6d6;
+      background-color: rgba(0,0,0,0.18);
+      padding: 20px;
+      text-align: center;
+      display: none;
+    }
+    .news-box:hover .news-text{
+      display: flex;
+      animation: fade 0.3s;
+    }
+    @keyframes fade{
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+    .news-text strong{
+      color: #f1f1f1;
+      font-size: 1.2rem;
+    }
+    .news-text span{
+      color: #ffffff;
+      border: 1px solid #636363;
+      font-weight: 500;
+      padding: 0px 10px;
+      background-color: #292929;
+    }
+    .news-text a{
+      color: #fdfcfc;
+      margin-top: 10px;
+      background-color: #cf2728;
+      padding: 2px 10px;
+    }
+    .news-text a:hover{
+      background-color: #e74444;
+      transition: all ease 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <section id="feature-product">
+
+    <!----heading--->
+         <h2>dasdhjkashdkjas</h2>
+
+         <!------box-container----->
+         <div class="feature-product-container">
+         <!----box-1------>
+         <div class="feature-product-box">
+           <!------img------->
+           <div class="feature-product-img">
+             <img src="Image/1.jpg" alt="">
+           </div>
+           <!----text-container--->
+           <div class="feature-product-text-container">
+             <!--text--->
+             <div class="product-feature-text">
+               <strong>dasdasdsa</strong>
+               <span>$200</span>
+             </div>
+             <!---cart-like-icon---->
+             <div class="cart-like">
+               <!--cart-icon-->
+               <a href="" class="e">ddas</a>
+               <!--heart-icon-->
+               <a href="" class="r">das</a>
+             </div>
+           </div>
+         </div>
+         <!----box-1------>
+         <div class="feature-product-box">
+           <!------img------->
+           <div class="feature-product-img">
+             <img src="Image/1.jpg" alt="">
+           </div>
+           <!----text-container--->
+           <div class="feature-product-text-container">
+             <!--text--->
+             <div class="product-feature-text">
+               <strong>dasdasdsa</strong>
+               <span>$200</span>
+             </div>
+             <!---cart-like-icon---->
+             <div class="cart-like">
+               <!--cart-icon-->
+               <a href="" class="e">ddas</a>
+               <!--heart-icon-->
+               <a href="" class="r">das</a>
+             </div>
+           </div>
+         </div>
+         <!----box-1------>
+         <div class="feature-product-box">
+           <!------img------->
+           <div class="feature-product-img">
+             <img src="Image/1.jpg" alt="">
+           </div>
+           <!----text-container--->
+           <div class="feature-product-text-container">
+             <!--text--->
+             <div class="product-feature-text">
+               <strong>dasdasdsa</strong>
+               <span>$200</span>
+             </div>
+             <!---cart-like-icon---->
+             <div class="cart-like">
+               <!--cart-icon-->
+               <a href="" class="e">ddas</a>
+               <!--heart-icon-->
+               <a href="" class="r">das</a>
+             </div>
+           </div>
+         </div>
+         <!----box-1------>
+         <div class="feature-product-box">
+           <!------img------->
+           <div class="feature-product-img">
+             <img src="Image/1.jpg" alt="">
+           </div>
+           <!----text-container--->
+           <div class="feature-product-text-container">
+             <!--text--->
+             <div class="product-feature-text">
+               <strong>dasdasdsa</strong>
+               <span>$200</span>
+             </div>
+             <!---cart-like-icon---->
+             <div class="cart-like">
+               <!--cart-icon-->
+               <a href="" class="e">buy</a>
+               <!--heart-icon-->
+               <a href="" class="r">click</a>
+             </div>
+           </div>
+         </div>
+       </div>
+       </section>
+
+       <!--==banner===--->
+       <section id="banner">
+         <!--text--->
+         <div class="banner-text">
+           <strong>dsadsad dadasda</strong>
+           <span>form $230</span>
+           <p>dasda dasdas dsad dasdasdasda dasd d asd sad sdsdadas dsdasda sddsd.</p>
+           <a href="">Shop ow</a>
+         </div>
+
+         <!--img--->
+         <div class="banner-img">
+           <img src="Image/1.jpg" alt="banner">
+         </div>
+       </section>
+       <!--==news========-->
+       <section id="news">
+        <!--heading-->
+         <h3>Latest ews</h3>
+         <!--container------>
+         <div class="news-box-container"></div>
+
+         <!--box-1-------->
+         <div class="news-box">
+          <!--img--->
+           <div class="news-img">
+             <img src="Image/1.jpg" alt="news">
+           </div>
+           <!--text--->
+           <div class="news-text">
+             <strong>dasdas dasdasdasdas dadada</strong>
+             <span>dadas da dasdasda</span>
+             <a href="">read more</a>
+           </div>
+           </div>
+           <!--box-2-------->
+         <div class="news-box">
+          <!--img--->
+           <div class="news-img">
+             <img src="Image/1.jpg" alt="news">
+           </div>
+           <!--text--->
+           <div class="news-text">
+             <strong>dasdas dasdasdasdas dadada</strong>
+             <span>dadas da dasdasda</span>
+             <a href="">read more</a>
+           </div>
+           </div>
+           <!--box-3-------->
+         <div class="news-box">
+          <!--img--->
+           <div class="news-img">
+             <img src="Image/1.jpg" alt="news">
+           </div>
+           <!--text--->
+           <div class="news-text">
+             <strong>dasdas dasdasdasdas dadada</strong>
+             <span>dadas da dasdasda</span>
+             <a href="">read more</a>
+           </div>
+           </div>
+           <!--box-4-------->
+         <div class="news-box">
+          <!--img--->
+           <div class="news-img">
+             <img src="Image/1.jpg" alt="news">
+           </div>
+           <!--text--->
+           <div class="news-text">
+             <strong>dasdas dasdasdasdas dadada</strong>
+             <span>dadas da dasdasda</span>
+             <a href="">read more</a>
+           </div>
+           </div>
+           </div>
+       </section>
+       <!--..-->
+</body>
+</html>

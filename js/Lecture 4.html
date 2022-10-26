@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            background-color: #6d1010;
+        }
+        span{
+            color: white;
+        }
+        button{
+            padding: 10px 30px;
+            background-color: darkcyan;
+            color: white;
+            border: none;
+            box-shadow: none;
+            min-width: 300px;
+            text-align: center;
+            font-size: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        #mouseEvent{
+            width: 300%;
+            background-color: orangered;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Events</h1>
+    <h2>Click Event</h2>
+    <div id="clickEvent">&nbsp;</div>
+    <button onclick="clickFunction()">Click Me</button>
+    <br>
+    <h2>On Change Event</h2>
+    <select id="selectBox" onchange="showCurrentChoice()">
+        <option value="value 1">Option 1</option>
+        <option value="value 2">Option 2</option>
+        <option value="value 3">Option 3</option>
+    </select>
+    <br>
+    <div id="showCurrentChoice"></div>
+    <br><br>
+    <div id="mouseEvent"></div>
+    <script>
+       function clickFunction() {
+        document.getElementById('clickEvent').innerHTML = "Button is Clicked";
+       } 
+       function showCurrentChoice() {
+        var choice = document.getElementById('selectBox').value;
+        document.getElementById('showCurrentChoice').innerHTML = choice;
+       }
+     </script>
+</body>
+</html>

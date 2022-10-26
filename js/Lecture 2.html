@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects & Arrays</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            background-color: #6d1010;
+        }
+        span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <h2>Object Result: <span id="Objects"></span></h2>
+    <hr>
+    <h1>JavaScript Arrays</h1>
+    <h2>Array Result: <span id="Arrays"></span></h2>
+    <script>
+        // Objects
+        var user = {
+            firstName: "Rehan",
+            lastName: "Bhatti",
+            email: "Rehan@Bhatti.gmail",
+            fullName: function() {
+                return this.firstName + "" + this.lastName;
+            }
+        };
+        var fullname = user.fullName();
+
+        // Arrays
+        var colors = ["red", "blue", "orange", "yellow", "green"];
+        var showColor = colors[1];
+        
+        // var colors = [
+        //     "red",
+        //     "blue",
+        //     "orange",
+        //     "yellow",
+        //     "green"
+        // ];
+        // colors[2] = 2;
+        // var showColor = colors[1];
+        // var showInteger = colors[2]; 
+        // document.getElementById("Objects").innerHTML = fullname;
+        // document.getElementById("Arrays").innerHTML = showColor;
+        // document.getElementById("Arrays").innerHTML = showInteger;
+        
+        document.getElementById("Objects").innerHTML = fullname;
+        document.getElementById("Arrays").innerHTML = showColor;
+     </script>
+</body>
+</html>

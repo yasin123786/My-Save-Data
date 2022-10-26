@@ -1,0 +1,26 @@
+Hour Hand
+--------------
+12 hour	= 360 deg
+1 hour	= 30 deg
+
+60 min	= 30 deg
+1 min	= 1/2 deg
+m min	= m/2 deg
+
+Hour hand movement from 12 = (30 * hours + min/2) deg
+--------------------------------------------------------
+Minute Hand
+--------------
+60 min	= 360 deg
+1 min	= 6 deg
+
+Minute hand Movement from 12 = (6 * min ) deg
+--------------------------------------------------------
+Seconds Hand
+--------------
+60 second	= 360 deg
+1 second	= 6 deg
+Seconds hand Movement from 12 = (6 * sec ) deg
+
+
+

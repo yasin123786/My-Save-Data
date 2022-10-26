@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            background-color: #6d1010;
+        }
+        span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Arithmetic Operators</h1>
+    <h2>Addition Result: <span id="Addition"></span></h2>
+    <h2>Subtraction Result: <span id="Subtraction"></span></h2>
+    <h2>Multiplication Result: <span id="Multiplication"></span></h2>
+    <h2>Division Result: <span id="Division"></span></h2>
+    <h2>Modulus Result: <span  id="Modulus"></span></h2>
+    <h2>Increment Result: <span id="Increment"></span></h2>
+    <h2>Decrement Result: <span id="Decrement"></span></h2>
+    <hr>
+    <h1>JavaScript Assignment Operators</h1>
+    <h2>Result: <span id="Assignment"></span></h2>
+    <script>
+        var a = 10, b = 20;
+        Addition = a + b;
+        Subtraction = b - a;
+        Multiplication = a * b;
+        Division = b / a;
+        Modulus = a % b;
+        a++;
+        a++;
+        b--;
+        b--;
+        Increment = a;
+        Decrement = b;
+        Assignment = b;
+        document.getElementById("Addition").innerHTML = Addition;
+        document.getElementById("Subtraction").innerHTML = Subtraction;
+        document.getElementById("Multiplication").innerHTML = Multiplication;
+        document.getElementById("Division").innerHTML = Division;
+        document.getElementById("Modulus").innerHTML = Modulus;
+        document.getElementById("Increment").innerHTML = Increment;
+        document.getElementById("Decrement").innerHTML = Decrement;
+        document.getElementById("Assignment").innerHTML = Assignment;
+     </script>
+</body>
+</html>

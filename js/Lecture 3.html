@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            background-color: #6d1010;
+        }
+        span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Functions</h1>
+    <h2 id="multiply"></h2>
+    <script>
+        // function showName() {
+        //     alert('Rehan Bhatti');
+        // }
+        // showName();
+
+        // function showName(name) {
+        //     alert(name);
+        // }
+        // showName('My name is Rehan Bhatti');
+
+        function multiply(a,b){
+            var x = a * b;
+            document.getElementById("multiply").innerHTML = x; 
+        }
+        multiply(10, 20);
+    </script>
+</body>
+</html>

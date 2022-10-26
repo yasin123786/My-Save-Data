@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<body>
+​
+<h2>What Can JavaScript Do?</h2>
+​
+<p id="demo">JavaScript can change HTML content.</p>
+​
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+​
+​
+<h2>What Can JavaScript Do?</h2>
+​
+<p>JavaScript can change HTML attribute values.</p>
+​
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+​
+<button onclick="document.getElementById('myImage').src='1.jpg'">Turn on the light</button>
+​
+<img id="myImage" src="1.jpg" style="width:100px">
+​
+<button onclick="document.getElementById('myImage').src='1..jpg'">Turn off the light</button>
+​​
+<h2>What Can JavaScript Do?</h2>
+​
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+​
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can hide HTML elements.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me!</button>
+
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can show hidden HTML elements.</p>
+
+<p id="demo" style="display:none">Hello JavaScript!</p>
+
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+<body>
+
+<h2>Demo JavaScript in Head</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+<h2>My First Web Page</h2>
+<p>My first paragraph.</p>
+​
+<script>
+window.alert(11-2);
+</script>
+
+<h2>JavaScript HTML Events</h2>
+<p>Click the button to display the date.</p>
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+<p id="demo"></p>
+<h2>JavaScript Statements</h2>
+
+<p>A <b>JavaScript program</b> is a list of <b>statements</b> to be executed by a computer.</p>
+
+<p id="demo"></p>
+
+<script>
+var x, y, z;  // Declare 3 variables
+x = 5;    // Assign the value 5 to x
+y = 6;    // Assign the value 6 to y
+z = x + y;  // Assign the sum of x and y to z
+
+document.getElementById("demo").innerHTML =
+"The value of z is " + z + ".";
+</script>
+
+<h2>JavaScript is Case Sensitive</h2>
+
+<p>Try to change lastName to lastname.</p>
+
+<p id="demo"></p>
+
+<script>
+let lastname, lastName;
+lastName = "Doe";
+lastname = "Peterson";
+document.getElementById("demo").innerHTML = lastName;
+</script>
+<h2>JavaScript Statements</h2>
+
+<p>Multiple statements on one line are allowed.</p>
+
+<p id="demo1"></p>
+
+<script>
+let a, b, c;
+a = 5; b = 6; c = a + b;
+document.getElementById("demo1").innerHTML = c;
+</script>
+<h1>JavaScript Variables</h1>
+
+<p>You can declare many variables in one statement.</p>
+
+<p id="demo"></p>
+
+<script>
+let person = "John Doe",
+carName = "Volvo",
+price = 200;
+document.getElementById("demo").innerHTML = carName;
+</script>
+<h2>JavaScript Arithmetic</h2>
+<h3>The * Operator</h3>
+
+<p id="demo"></p>
+
+<script>
+let x = 5;
+let y = 2;
+let z = x * y;
+document.getElementById("demo").innerHTML = z;
+</script>
+​
+<h2>JavaScript Operators</h2>
+​
+<p>The + operator concatenates (adds) strings.</p>
+​
+<p id="demo"></p>
+​
+<script>
+var txt1 = "What a very";
+var txt2 = "nice day";
+document.getElementById("demo").innerHTML = txt1 + txt2;
+</script>
+​
+<h2>JavaScript Operators</h2>
+
+<p>Adding a number and a string, returns a string.</p>
+
+<p id="demo"></p>
+
+<script>
+let x = 5 + 5;
+let y = "5" + 5;
+let z = "Hello" + 5;
+document.getElementById("demo").innerHTML =
+x + "<br>" + y + "<br>" + z;
+</script>
+<h2>JavaScript Strings</h2>
+​
+<p>You can use quotes inside a string, as long as they don't match the quotes surrounding the string:</p>
+​
+<p id="demo"></p>
+​
+<script>
+let answer1 = "It's alright";
+let answer2 = "He is called 'Johnny'";
+let answer3 = 'He is called "Johnny"';
+​
+document.getElementById("demo").innerHTML =
+answer1 + "<br>" + 
+answer2 + "<br>" + 
+answer3;
+</script>
+​​
+<h2>JavaScript Objects</h2>
+​
+<p id="demo"></p>
+​
+<script>
+const person = {
+  firstName : "John",
+  lastName  : "Doe",
+  age     : 50,
+  eyeColor  : "blue"
+};
+​
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+<p>The typeof operator returns the type of a variable or an expression.</p>
+​
+<p id="demo"></p>
+​
+<script>
+document.getElementById("demo").innerHTML = 
+typeof "" + "<br>" +
+typeof "John" + "<br>" + 
+typeof "John Doe" + "<br>" +
+typeof 0 + "<br>" +
+typeof 314 + "<br>" +
+typeof 3.14 + "<br>" +
+typeof (3.14);
+</script>
+<h2>JavaScript Objects</h2>
+
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML = "The car type is " + car.type;
+</script>
+
+<h2>JavaScript Objects</h2>
+
+<p>There are two different ways to access an object property.</p>
+
+<p>You can use person.property or person["property"].</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML =
+person["firstName"] + " " + person["lastName"];
+</script>
+​
+<h2>JavaScript Functions</h2>
+​
+<p>This example calls a function which performs a calculation and returns the result:</p>
+​
+<p id="demo"></p>
+​
+<script>
+var x = myFunction(4, 3);
+document.getElementById("demo").innerHTML = x;
+​
+function myFunction(a, b) {
+  return a * b;
+}
+</script>
+​
+</body>
+</html>
+​

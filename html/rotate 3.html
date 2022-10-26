@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/*  service section */
+    .service{
+      flex-direction: column;
+      min-height: 60vh;
+      padding: 10rem 5rem;
+    }
+    .service .service-header{
+      width: 100%;
+      text-align: center;
+    }
+    .service .service-header .service-header-heading{
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: black;
+    }
+    .service .service-header .service-header-desc {
+      font-size: 1.3rem;
+      line-height: 2rem;
+      margin-top: 20px;
+    }
+    .service .service-info{
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+    }
+    .service .service-info .service{
+      width: 100%;
+      min-height: 300px;
+      position: relative;
+      transition: .3s ease transform;
+      margin: 5px;
+    }
+    .service .service-info .service .service-card{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      transform-style: preserve-3d;
+      transition: .3s ease transform;
+      display: block;
+    }
+    .service .service-info .service .service-card .service-front,
+    .service .service-info .service .service-card .service-back{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.13);
+      padding: 10px;
+    }
+    .service .service-info .service .service-card .service-back{
+      transform: rotateY(180deg);
+    }
+    .service .service-info .service .service-card .service-frnot i{
+      font-size: 4rem;
+      color: black;
+      margin-bottom: 10px;
+    }
+    .service .service-info .service .service-card .service-front .service-front-head{
+      font-size: 2.5rem;
+      text-transform: capitalize;
+    }
+    .service .service-info .service:hover .service-card{
+      transform: rotateY(180deg);
+    }
+    /*  service section */
+  </style>
+</head>
+<body>
+       <!-- Service section -->
+       <section id="service" class="service container">
+        <div class="service-header">
+          <h1 class="service-header-heading">Service</h1>
+          <p class="service-header-desc"></p>
+        </div>
+        <div class="service-info">
+          <div class="service">
+            <div class="service-card">
+              <div class="service-front">
+                <i class="fa fa-palette"></i>
+                <h1 class="service-front-heading">Web Design</h1>
+              </div>
+              <div class="service-back">
+                <h1 class="service-back-heading">Web Design</h1>
+                <p class="service-back-desc">dasdasdasdasdasdasdasdasdasdasda
+            <br>
+          dasdasdadadasd
+          <br>
+        dasdasdadadadadas<br>
+       dasdasdasdas<br>
+     dasdasdasdasdasdasdasdasdasdasda
+            <br>
+          dasdasdadadasd
+          <br>
+        dasdasdadadadadas<br>
+       dasdasdasdas<br>
+     dasdasdasdasdasdasdasdasdasdasda
+            <br>
+          dasdasdadadasd
+          <br>
+        dasdasdadadadadas<br>
+       dasdasdasdas<br>
+     dasdasdasdasdasdasdasdasdasdasda
+            <br>
+          dasdasdadadasd
+          <br>
+        dasdasdadadadadas<br>
+       dasdasdasdas<br></p>
+              </div>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service-card">
+              <div class="service-front">
+                <i class="fa fa-palette"></i>
+                <h1 class="service-front-heading">branding</h1>
+              </div>
+              <div class="service-back">
+                <h1 class="service-back-heading">branding</h1>
+                <p class="service-back-desc">We have bein running it form 2010.Buy one get ne get one free is our big offer for only new costumers.
+            Cap-shop is very simple website if you don't know how to use it so you go to help page.
+        We have bein running it form 2010.Buy one get ne get one free is our big offer for only new costumers.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service-card">
+              <div class="service-front">
+                <i class="fa fa-palette"></i>
+                <h1 class="service-front-heading">Font End Dev</h1>
+              </div>
+              <div class="service-back">
+                <h1 class="service-back-heading">Font End Dev</h1>
+                <p class="service-back-desc">We have bein running it form 2010.Buy one get ne get one free is our big offer for only new costumers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+       <!-- End Service section -->
+</body>
+</html>
